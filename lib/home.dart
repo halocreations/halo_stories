@@ -59,7 +59,7 @@ class HomeScreen extends StatelessWidget {
                       ),
                       //White body
                       Container(
-                        height: 250,
+                        height: 200,
                         padding: cardPadding,
                         color: const Color.fromARGB(255, 246, 247, 214),
                         child: Row(
@@ -70,7 +70,7 @@ class HomeScreen extends StatelessWidget {
                                 bottomLeft: Radius.circular(20),
                               ),
                               child: Container(
-                                width: 150,
+                                width: 130,
                                 color: const Color.fromARGB(255, 246, 247, 214),
                                 child: Image.asset(
                                   'assets/St_George_Third_Draft.png',
@@ -94,14 +94,6 @@ class HomeScreen extends StatelessWidget {
                                 )
                               )
                             ),
-                            // Text(
-                            //   'Saint\nGeorge',
-                            //   style: TextStyle(
-                            //     fontSize: 20,
-                            //     fontWeight: FontWeight.w600,
-                            //     color: Colors.black87,
-                            //   ),
-                            // ),
                           ],
                         ),
                       ),
@@ -112,7 +104,7 @@ class HomeScreen extends StatelessWidget {
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: cardMargin.left),
                 child: SizedBox(
-                  height: 150, // fixed height for both cards
+                  height: 200, // fixed height for both cards
                   child: Row(
                     children: [
                       Expanded(
@@ -122,18 +114,45 @@ class HomeScreen extends StatelessWidget {
                             borderRadius: BorderRadius.circular(20),
                           ),
                           color: const Color.fromARGB(255, 226, 214, 236),
-                          child: Padding(
+                          child: Container(
                             padding: cardPadding,
-                            child: Center(
-                              child: Text(
-                                'STORIES\nOF THE SAINTS',
-                                style: TextStyle(
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.bold,
-                                  color: const Color.fromARGB(255, 50, 35, 52),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Expanded(
+                                  flex: 2,
+                                  child: Padding(
+                                    padding: EdgeInsets.symmetric(horizontal: 4.0),
+                                    child: Text(
+                                      'STORIES\nOF THE SAINTS',
+                                      style: TextStyle(
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.bold,
+                                        color: const Color.fromARGB(
+                                          255,
+                                          50,
+                                          35,
+                                          52,
+                                        ),
+                                      ),
+                                      textAlign: TextAlign.center,
+                                      softWrap: true,
+                                      overflow: TextOverflow.visible,
+                                    ),
+                                  ),
                                 ),
-                                textAlign: TextAlign.center,
-                              ),
+                                const SizedBox(height: 20),
+                                Expanded(
+                                  flex: 15,
+                                  child: Image.asset(
+                                    'assets/storyBookIcon.png',
+                                    fit: BoxFit.cover,
+                                    width: 150
+                                  )
+                                ),
+                                
+                              ],
                             ),
                           ),
                         ),
