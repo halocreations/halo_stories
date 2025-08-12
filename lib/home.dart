@@ -213,7 +213,7 @@ class HomeScreen extends StatelessWidget {
             Padding(
               padding: EdgeInsets.symmetric(horizontal: cardMargin.left),
               child: SizedBox(
-                height: 200,
+                height: 230,
                 child: Row(
                   children: [
                     Expanded(
@@ -266,18 +266,42 @@ class HomeScreen extends StatelessWidget {
                           borderRadius: BorderRadius.circular(20),
                         ),
                         color: const Color.fromARGB(255, 205, 250, 143),
-                        child: Padding(
+                        child: Container(
                           padding: cardPadding,
-                          child: Center(
-                            child: Text(
-                              'PROFILE',
-                              style: TextStyle(
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold,
-                                color: const Color.fromARGB(255, 10, 35, 9),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              Expanded(
+                                
+                                child: Padding(
+                                  padding: EdgeInsets.symmetric(horizontal: 4.0),
+                                  child: Text(
+                                    'PROFILE',
+                                    style: TextStyle(
+                                      fontSize: 17,
+                                      fontWeight: FontWeight.bold,
+                                      color: const Color.fromARGB(
+                                        255,
+                                        10,
+                                        35,
+                                        9,
+                                      ),
+                                    ),
+                                    textAlign: TextAlign.center,
+                                  ),
+                                ),
                               ),
-                              textAlign: TextAlign.center,
-                            ),
+                              SizedBox(height: 5),
+                              Expanded(
+                                flex: 9,
+                                child: Image.asset(
+                                  'assets/Thomas_More_First_Draft.png',
+                                  fit: BoxFit.cover,
+                                  width: 110
+                                ),
+                              )
+                            ], 
                           )
                         )
                       ),
