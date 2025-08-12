@@ -165,18 +165,42 @@ class HomeScreen extends StatelessWidget {
                             borderRadius: BorderRadius.circular(20),
                           ),
                           color: const Color.fromARGB(255, 255, 229, 167),
-                          child: Padding(
+                          child: Container(
                             padding: cardPadding,
-                            child: Center(
-                              child: Text(
-                                'QUIZZES',
-                                style: TextStyle(
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.bold,
-                                  color: const Color.fromARGB(255, 187, 116, 41),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Expanded(
+                                  flex: 2,
+                                  child: Padding(
+                                    padding: EdgeInsets.symmetric(horizontal: 4.0),
+                                    child: Text(
+                                      'QUIZZES',
+                                      style: TextStyle(
+                                        fontSize: 17,
+                                        fontWeight: FontWeight.bold,
+                                        color: const Color.fromARGB(
+                                          255,
+                                          187,
+                                          116,
+                                          41,
+                                        ),
+                                      ),
+                                      textAlign: TextAlign.center,
+                                    ),
+                                  ),
                                 ),
-                                textAlign: TextAlign.center,
-                            ),
+                                Expanded(
+                                  flex: 15,
+                                  child: Image.asset(
+                                    'assets/questionMark.png',
+                                    fit: BoxFit.cover,
+                                    width: 150
+                                  ),
+                                )
+                              ]
+                              
                           ),
                         ),
                       ),
@@ -189,7 +213,7 @@ class HomeScreen extends StatelessWidget {
             Padding(
               padding: EdgeInsets.symmetric(horizontal: cardMargin.left),
               child: SizedBox(
-                height: 150,
+                height: 200,
                 child: Row(
                   children: [
                     Expanded(
@@ -199,18 +223,37 @@ class HomeScreen extends StatelessWidget {
                           borderRadius: BorderRadius.circular(20)
                         ),
                         color: const Color.fromRGBO(189, 218, 171, 1),
-                        child: Padding(
+                        child: Container(
                           padding: cardPadding,
-                          child: Center(
-                            child: Text(
-                              'BADGES',
-                              style: TextStyle(
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold,
-                                color: const Color.fromARGB(255, 2, 67, 23)
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              Expanded(
+                                flex: 2,
+                                child: Padding(
+                                  padding: EdgeInsets.symmetric(horizontal: 4.0),
+                                  child: Text(
+                                    'BADGES',
+                                    style: TextStyle(
+                                      fontSize: 17,
+                                      fontWeight: FontWeight.bold,
+                                      color: const Color.fromARGB(255, 2, 67, 23)
+                                    ),
+                                    textAlign: TextAlign.center,
+                                  ),
+                                ),
                               ),
-                              textAlign: TextAlign.center,
-                            ),
+                              Expanded(
+                                flex: 15,
+                                child: Image.asset(
+                                  'assets/goldenStarSticker.png',
+                                  fit: BoxFit.cover,
+                                  width: 150,
+                                ),
+                              )
+                              
+                            ],
                           )
                         )
                       ),

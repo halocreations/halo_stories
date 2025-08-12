@@ -65,6 +65,8 @@ flutter:
     - assets/1024.png
     - assets/St_George_Third_Draft.png
     - assets/storyBookIcon.png
+    - assets/questionMark.png
+    - assets/goldenStarSticker.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
