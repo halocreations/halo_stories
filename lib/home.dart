@@ -70,10 +70,10 @@ class HomeScreen extends StatelessWidget {
                                 bottomLeft: Radius.circular(20),
                               ),
                               child: Container(
-                                width: 130,
+                                width: 110,
                                 color: const Color.fromARGB(255, 246, 247, 214),
                                 child: Image.asset(
-                                  'assets/St_George_Third_Draft.png',
+                                  'assets/St_Cecilia_First_Draft.png',
                                   fit: BoxFit.cover
                                 ),
                               )
@@ -84,7 +84,7 @@ class HomeScreen extends StatelessWidget {
                                 child: Align(
                                   alignment: Alignment.centerLeft,
                                   child: Text(
-                                    'Saint\nGeorge',
+                                    'Saint\nCecilia',
                                     style: TextStyle(
                                       fontSize: 40,
                                       fontWeight: FontWeight.w600,
