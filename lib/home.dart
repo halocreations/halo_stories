@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:halo_stories/screens/stories_of_the_saints.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -114,47 +115,62 @@ class HomeScreen extends StatelessWidget {
                             borderRadius: BorderRadius.circular(20),
                           ),
                           color: const Color.fromARGB(255, 226, 214, 236),
-                          child: Container(
-                            padding: cardPadding,
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              mainAxisSize: MainAxisSize.max,
-                              children: [
-                                Expanded(
-                                  flex: 2,
-                                  child: Padding(
-                                    padding: EdgeInsets.symmetric(horizontal: 4.0),
-                                    child: Text(
-                                      'STORIES\nOF THE SAINTS',
-                                      style: TextStyle(
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.bold,
-                                        color: const Color.fromARGB(
-                                          255,
-                                          50,
-                                          35,
-                                          52,
-                                        ),
+                          child: InkWell(
+                            borderRadius: BorderRadius.circular(20),
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => StoriesOfTheSaintsScreen()
+                                )
+                                
+                              );
+                              print("Card tapped!");
+                            },
+                            child: Container(
+                              padding: cardPadding,
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  Expanded(
+                                    flex: 2,
+                                    child: Padding(
+                                      padding: EdgeInsets.symmetric(
+                                        horizontal: 4.0,
                                       ),
-                                      textAlign: TextAlign.center,
-                                      softWrap: true,
-                                      overflow: TextOverflow.visible,
+                                      child: Text(
+                                        'STORIES\nOF THE SAINTS',
+                                        style: TextStyle(
+                                          fontSize: 16,
+                                          fontWeight: FontWeight.bold,
+                                          color: const Color.fromARGB(
+                                            255,
+                                            50,
+                                            35,
+                                            52,
+                                          ),
+                                        ),
+                                        textAlign: TextAlign.center,
+                                        softWrap: true,
+                                        overflow: TextOverflow.visible,
+                                      ),
                                     ),
                                   ),
-                                ),
-                                const SizedBox(height: 20),
-                                Expanded(
-                                  flex: 15,
-                                  child: Image.asset(
-                                    'assets/storyBookIcon.png',
-                                    fit: BoxFit.cover,
-                                    width: 150
-                                  )
-                                ),
-                                
-                              ],
+                                  const SizedBox(height: 20),
+                                  Expanded(
+                                    flex: 15,
+                                    child: Image.asset(
+                                      'assets/storyBookIcon.png',
+                                      fit: BoxFit.cover,
+                                      width: 150,
+                                    ),
+                                  ),
+                                ],
+                              ),
                             ),
                           ),
+                          
                         ),
                       ),
                       SizedBox(width: 24),
