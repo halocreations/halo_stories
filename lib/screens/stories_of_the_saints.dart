@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:halo_stories/screens/st_joseph_story.dart';
 
 class StoriesOfTheSaintsScreen extends StatelessWidget {
   const StoriesOfTheSaintsScreen({super.key});
@@ -141,26 +142,35 @@ class StoriesOfTheSaintsScreen extends StatelessWidget {
                                 )
                               ),
                               SizedBox(width: 20),
-                              Container(
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(20.0),
-                                  color: const Color.fromARGB(
-                                    255,
-                                    231,
-                                    222,
-                                    164,
+                              InkWell(
+                                onTap: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(builder: (context) => StJosephStoryScreen())
+                                  );
+                                },
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(20.0),
+                                    color: const Color.fromARGB(
+                                      255,
+                                      231,
+                                      222,
+                                      164,
+                                    ),
                                   ),
-                                ),
-                                padding: EdgeInsets.all(6),
-                                child: Text(
-                                  'Story Book',
-                                  style: TextStyle(
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.black87,
-                                  )
-                                ),
-                              )
+                                  padding: EdgeInsets.all(6),
+                                  child: Text(
+                                    'Story Book',
+                                    style: TextStyle(
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.black87,
+                                    ),
+                                  ),
+                                )
+                              ),
+                              
                             ],
                           ),
                           Text(
