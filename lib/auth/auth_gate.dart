@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:halo_stories/home.dart';
 import 'package:halo_stories/screens/login.dart';
-import 'package:halo_stories/screens/profile.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 class AuthGate extends StatelessWidget {
