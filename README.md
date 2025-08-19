@@ -3,7 +3,7 @@
 Halo Stories is an app that will allow you to read stories of the saints in a kid-friendly way. 
 
 - [About](#about)
-- [Key Features][#key-features)
+- [Key Features](#key-features)
 - [Screenshots](#screenshots)
 
 ## About
