@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:halo_stories/screens/badges.dart';
+import 'package:halo_stories/screens/profile.dart';
+import 'package:halo_stories/screens/quizzes.dart';
 import 'package:halo_stories/screens/stories_of_the_saints.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -125,7 +128,7 @@ class HomeScreen extends StatelessWidget {
                                 )
                                 
                               );
-                              print("Card tapped!");
+                              print("Stories of the Saints card tapped!");
                             },
                             child: Container(
                               padding: cardPadding,
@@ -181,44 +184,56 @@ class HomeScreen extends StatelessWidget {
                             borderRadius: BorderRadius.circular(20),
                           ),
                           color: const Color.fromARGB(255, 255, 229, 167),
-                          child: Container(
-                            padding: cardPadding,
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              mainAxisSize: MainAxisSize.max,
-                              children: [
-                                Expanded(
-                                  flex: 2,
-                                  child: Padding(
-                                    padding: EdgeInsets.symmetric(horizontal: 4.0),
-                                    child: Text(
-                                      'QUIZZES',
-                                      style: TextStyle(
-                                        fontSize: 17,
-                                        fontWeight: FontWeight.bold,
-                                        color: const Color.fromARGB(
-                                          255,
-                                          187,
-                                          116,
-                                          41,
+                          child: InkWell(
+                            borderRadius: BorderRadius.circular(20),
+                            onTap: () { 
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => QuizzesScreen(),
+                                )
+                                
+                              );
+                            },
+                            child: Container(
+                                padding: cardPadding,
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: [
+                                    Expanded(
+                                      flex: 2,
+                                      child: Padding(
+                                        padding: EdgeInsets.symmetric(horizontal: 4.0),
+                                        child: Text(
+                                          'QUIZZES',
+                                          style: TextStyle(
+                                            fontSize: 17,
+                                            fontWeight: FontWeight.bold,
+                                            color: const Color.fromARGB(
+                                              255,
+                                              187,
+                                              116,
+                                              41,
+                                            ),
+                                          ),
+                                          textAlign: TextAlign.center,
                                         ),
                                       ),
-                                      textAlign: TextAlign.center,
                                     ),
-                                  ),
-                                ),
-                                Expanded(
-                                  flex: 15,
-                                  child: Image.asset(
-                                    'assets/questionMark.png',
-                                    fit: BoxFit.cover,
-                                    width: 150
-                                  ),
-                                )
-                              ]
-                              
+                                    Expanded(
+                                      flex: 15,
+                                      child: Image.asset(
+                                        'assets/questionMark.png',
+                                        fit: BoxFit.cover,
+                                        width: 150
+                                      ),
+                                    )
+                                  ]
+                              ),
+                            ),
                           ),
-                        ),
+                        
                       ),
                     ),
                   ],
@@ -239,39 +254,50 @@ class HomeScreen extends StatelessWidget {
                           borderRadius: BorderRadius.circular(20)
                         ),
                         color: const Color.fromRGBO(189, 218, 171, 1),
-                        child: Container(
-                          padding: cardPadding,
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              Expanded(
-                                flex: 2,
-                                child: Padding(
-                                  padding: EdgeInsets.symmetric(horizontal: 4.0),
-                                  child: Text(
-                                    'BADGES',
-                                    style: TextStyle(
-                                      fontSize: 17,
-                                      fontWeight: FontWeight.bold,
-                                      color: const Color.fromARGB(255, 2, 67, 23)
+                        child: InkWell(
+                          borderRadius: BorderRadius.circular(20),
+                          onTap: () {
+                            Navigator.push(
+                              context, 
+                              MaterialPageRoute(
+                                builder: (context) => BadgesScreen(),
+                              )
+                            );
+                          },
+                          child: Container(
+                            padding: cardPadding,
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Expanded(
+                                  flex: 2,
+                                  child: Padding(
+                                    padding: EdgeInsets.symmetric(horizontal: 4.0),
+                                    child: Text(
+                                      'BADGES',
+                                      style: TextStyle(
+                                        fontSize: 17,
+                                        fontWeight: FontWeight.bold,
+                                        color: const Color.fromARGB(255, 2, 67, 23)
+                                      ),
+                                      textAlign: TextAlign.center,
                                     ),
-                                    textAlign: TextAlign.center,
                                   ),
                                 ),
-                              ),
-                              Expanded(
-                                flex: 15,
-                                child: Image.asset(
-                                  'assets/goldenStarSticker.png',
-                                  fit: BoxFit.cover,
-                                  width: 150,
-                                ),
-                              )
-                              
-                            ],
+                                Expanded(
+                                  flex: 15,
+                                  child: Image.asset(
+                                    'assets/goldenStarSticker.png',
+                                    fit: BoxFit.cover,
+                                    width: 150,
+                                  ),
+                                )
+                                
+                              ],
+                            )
                           )
-                        )
+                        ),
                       ),
                     ),
                     SizedBox(width: 24),
@@ -282,43 +308,54 @@ class HomeScreen extends StatelessWidget {
                           borderRadius: BorderRadius.circular(20),
                         ),
                         color: const Color.fromARGB(255, 205, 250, 143),
-                        child: Container(
-                          padding: cardPadding,
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              Expanded(
-                                
-                                child: Padding(
-                                  padding: EdgeInsets.symmetric(horizontal: 4.0),
-                                  child: Text(
-                                    'PROFILE',
-                                    style: TextStyle(
-                                      fontSize: 17,
-                                      fontWeight: FontWeight.bold,
-                                      color: const Color.fromARGB(
-                                        255,
-                                        10,
-                                        35,
-                                        9,
+                        child: InkWell(
+                          borderRadius: BorderRadius.circular(20),
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => ProfileScreen()
+                              )
+                            );
+                          },
+                          child: Container(
+                            padding: cardPadding,
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Expanded(
+                                  
+                                  child: Padding(
+                                    padding: EdgeInsets.symmetric(horizontal: 4.0),
+                                    child: Text(
+                                      'PROFILE',
+                                      style: TextStyle(
+                                        fontSize: 17,
+                                        fontWeight: FontWeight.bold,
+                                        color: const Color.fromARGB(
+                                          255,
+                                          10,
+                                          35,
+                                          9,
+                                        ),
                                       ),
+                                      textAlign: TextAlign.center,
                                     ),
-                                    textAlign: TextAlign.center,
                                   ),
                                 ),
-                              ),
-                              SizedBox(height: 5),
-                              Expanded(
-                                flex: 9,
-                                child: Image.asset(
-                                  'assets/Thomas_More_First_Draft.png',
-                                  fit: BoxFit.cover,
-                                  width: 110
-                                ),
-                              )
-                            ], 
-                          )
+                                SizedBox(height: 5),
+                                Expanded(
+                                  flex: 9,
+                                  child: Image.asset(
+                                    'assets/Thomas_More_First_Draft.png',
+                                    fit: BoxFit.cover,
+                                    width: 110
+                                  ),
+                                )
+                              ], 
+                            )
+                          ),
                         )
                       ),
                     )
