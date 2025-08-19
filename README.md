@@ -16,3 +16,6 @@ Halo Stories is an app that will have stories about the saints for kids to read 
 
 <img width="387" height="784" alt="haloStoriesHome" src="https://github.com/user-attachments/assets/72a7c588-3a2b-470b-8726-a920cff758e6" />
 
+<img width="391" height="779" alt="storiesOfSaints" src="https://github.com/user-attachments/assets/03352182-16e5-4831-8f22-48c2f78c9b65" />
+
+
