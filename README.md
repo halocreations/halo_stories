@@ -13,3 +13,6 @@ Halo Stories is an app that will have stories about the saints for kids to read 
 - Inkwell Card Widgets
 
 ## Screenshots
+
+<img width="387" height="784" alt="haloStoriesHome" src="https://github.com/user-attachments/assets/72a7c588-3a2b-470b-8726-a920cff758e6" />
+
