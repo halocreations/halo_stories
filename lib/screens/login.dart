@@ -36,6 +36,22 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color.fromARGB(255, 54, 197, 192),
+      appBar: AppBar(
+        backgroundColor: const Color.fromARGB(255, 54, 197, 192),
+        title: Padding(
+          padding: EdgeInsets.only(top: 15),
+          child: Text(
+            'HALO STORIES',
+            style: TextStyle(
+              fontSize: 50,
+              color: Colors.deepPurple,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          
+        ),
+      ),
       body: ListView(
         padding: EdgeInsets.symmetric(horizontal: 30, vertical: 50),
         children: [
@@ -43,30 +59,50 @@ class _LoginPageState extends State<LoginPage> {
           TextField(
             controller: _emailController,
             decoration: InputDecoration(
+              filled: true,
+              fillColor: const Color.fromARGB(255, 235, 229, 209),
               border: OutlineInputBorder(borderRadius: BorderRadius.circular(20)),
               hintText: 'Email'
             ),
+            
           ),
           Padding(padding: EdgeInsets.symmetric(horizontal: 30, vertical: 5),),
           TextField(
             controller: _passwordController,
             decoration: InputDecoration(
+              filled: true,
+              fillColor: const Color.fromARGB(255, 235, 229, 209),
               border: OutlineInputBorder(borderRadius: BorderRadius.circular(20)),
               hintText: 'Password',
             )
           ),
           const SizedBox(height: 12),
           ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Colors.deepPurple,
+              foregroundColor: Colors.white,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(15),
+              )
+            ),
             onPressed: login, 
-            child: const Text('Login'),
-          ),
+            child: const Text(
+              'LOGIN',
+              style: TextStyle(
+                fontSize: 30,
+                fontWeight: FontWeight.bold,
 
+              )
+            ),
+          ),
+          SizedBox(height: 20),
+          Center(child: Text("DON'T HAVE AN ACCOUNT?")),
           GestureDetector(
             onTap: () => Navigator.push(
               context,
               MaterialPageRoute(builder: (context) => const RegisterPage()),
             ),
-            child: const Center(child: Text("Don't have an account? Sign up"))
+            child: const Center(child: Text("SIGN UP"))
           ),
 
         ]

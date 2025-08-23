@@ -19,8 +19,10 @@ class AuthGate extends StatelessWidget {
 
         final session = snapshot.hasData ? snapshot.data!.session : null;
 
+
+        // change back to HomeScreen once done with changing UI of login screen
         if(session != null) {
-          return HomeScreen();
+          return LoginPage();
         }
         else {
           return LoginPage();
