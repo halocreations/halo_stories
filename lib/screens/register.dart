@@ -48,8 +48,17 @@ class _RegisterPageState extends State<RegisterPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color.fromARGB(255, 54, 197, 192),
       appBar: AppBar(
-        title: const Text('Sign Up'),
+        backgroundColor: const Color.fromARGB(255, 54, 197, 192),
+        title: const Text(
+          'SIGN UP',
+          style: TextStyle(
+            fontSize: 50,
+            fontWeight: FontWeight.bold,
+            color: Colors.deepPurple,
+          )
+        ),
       ),
       body: ListView(
         padding: EdgeInsets.symmetric(horizontal: 30, vertical: 50),
@@ -57,6 +66,8 @@ class _RegisterPageState extends State<RegisterPage> {
           TextField(
             controller: _emailController,
             decoration: InputDecoration(
+              filled: true,
+              fillColor: const Color.fromARGB(255, 235, 229, 209),
               border: OutlineInputBorder(borderRadius: BorderRadius.circular(20)),
               hintText: 'Email'
             ),
@@ -65,6 +76,8 @@ class _RegisterPageState extends State<RegisterPage> {
           TextField(
             controller: _passwordController,
             decoration: InputDecoration(
+              filled: true,
+              fillColor: const Color.fromARGB(255, 235, 229, 209),
               border: OutlineInputBorder(borderRadius: BorderRadius.circular(20)),
               hintText: 'Password'
             ),
@@ -73,12 +86,27 @@ class _RegisterPageState extends State<RegisterPage> {
           TextField(
             controller: _confirmPasswordController,
             decoration: InputDecoration(
+              filled: true,
+              fillColor: const Color.fromARGB(255, 235, 229, 209),
               border: OutlineInputBorder(borderRadius: BorderRadius.circular(20)),
               hintText: 'Confirm Password'
             ),
           ),
           const SizedBox(height: 12),
-          ElevatedButton(onPressed: signUp, child: const Text('Sign Up')),
+          ElevatedButton(
+            onPressed: signUp, 
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Colors.deepPurple,
+              foregroundColor: Colors.white,
+            ),
+            child: const Text(
+              'SIGN UP',
+              style: TextStyle(
+                fontSize: 30,
+                fontWeight: FontWeight.bold,
+              )
+            )
+          ),
 
           
         ],
