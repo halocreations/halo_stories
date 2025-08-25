@@ -73,6 +73,8 @@ flutter:
     - assets/goldenStarSticker.png
     - assets/Thomas_More_First_Draft.png
     - assets/St_Cecilia_First_Draft.png
+    - assets/logo.png
+    - assets/logo_revised.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

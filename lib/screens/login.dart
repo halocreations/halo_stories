@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:halo_stories/auth/auth_service.dart';
+import 'package:halo_stories/home.dart';
 import 'package:halo_stories/screens/register.dart';
 
 class LoginPage extends StatefulWidget {
@@ -56,6 +57,14 @@ class _LoginPageState extends State<LoginPage> {
         padding: EdgeInsets.symmetric(horizontal: 30, vertical: 50),
         children: [
           Padding(padding: EdgeInsets.only(top: 20),),
+          ClipOval(
+            child: Image.asset(
+              'assets/logo_revised.png',
+              fit: BoxFit.cover,
+            )
+          ),
+
+          SizedBox(height: 35),
           TextField(
             controller: _emailController,
             decoration: InputDecoration(
@@ -96,13 +105,21 @@ class _LoginPageState extends State<LoginPage> {
             ),
           ),
           SizedBox(height: 20),
-          Center(child: Text("DON'T HAVE AN ACCOUNT?")),
           GestureDetector(
             onTap: () => Navigator.push(
               context,
               MaterialPageRoute(builder: (context) => const RegisterPage()),
             ),
-            child: const Center(child: Text("SIGN UP"))
+            child: const Center(
+              child: Text(
+                "SIGN UP",
+                style: TextStyle(
+                  color: Colors.deepPurple,
+                  fontSize: 20,
+                )
+
+              )
+            )
           ),
 
         ]
