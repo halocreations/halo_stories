@@ -3,6 +3,7 @@ import 'package:halo_stories/screens/badges.dart';
 import 'package:halo_stories/screens/profile.dart';
 import 'package:halo_stories/screens/quizzes.dart';
 import 'package:halo_stories/screens/stories_of_the_saints.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -16,7 +17,7 @@ class HomeScreen extends StatelessWidget {
         appBar: AppBar(
           title: 
             Text('Halo Stories'),
-            titleTextStyle: TextStyle(
+            titleTextStyle: GoogleFonts.nunito(
               fontSize: 36,
               fontWeight: FontWeight.bold,
             ),

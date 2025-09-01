@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:halo_stories/auth/auth_service.dart';
 import 'package:halo_stories/home.dart';
 import 'package:halo_stories/screens/register.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -18,7 +19,7 @@ class _LoginPageState extends State<LoginPage> {
   // text controllers
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
-
+  bool _obscureText = true;
 
   void login() async {
     //prepare data
@@ -44,7 +45,7 @@ class _LoginPageState extends State<LoginPage> {
           padding: EdgeInsets.only(top: 15),
           child: Text(
             'HALO STORIES',
-            style: TextStyle(
+            style: GoogleFonts.nunito(
               fontSize: 50,
               color: Colors.deepPurple,
               fontWeight: FontWeight.bold,
@@ -77,8 +78,20 @@ class _LoginPageState extends State<LoginPage> {
           ),
           Padding(padding: EdgeInsets.symmetric(horizontal: 30, vertical: 5),),
           TextField(
+            obscureText: _obscureText,
+            autocorrect: false,
             controller: _passwordController,
             decoration: InputDecoration(
+              suffixIcon: GestureDetector(
+                child: Icon(
+                  _obscureText ? Icons.visibility_off : Icons.visibility,
+                ),
+                onTap: () {
+                  setState(() {
+                    _obscureText = !_obscureText;
+                  });
+                },
+              ),
               filled: true,
               fillColor: const Color.fromARGB(255, 235, 229, 209),
               border: OutlineInputBorder(borderRadius: BorderRadius.circular(20)),
@@ -95,13 +108,12 @@ class _LoginPageState extends State<LoginPage> {
               )
             ),
             onPressed: login, 
-            child: const Text(
+            child: Text(
               'LOGIN',
-              style: TextStyle(
+              style: GoogleFonts.nunito(
                 fontSize: 30,
                 fontWeight: FontWeight.bold,
-
-              )
+              ),
             ),
           ),
           SizedBox(height: 20),
@@ -110,10 +122,10 @@ class _LoginPageState extends State<LoginPage> {
               context,
               MaterialPageRoute(builder: (context) => const RegisterPage()),
             ),
-            child: const Center(
+            child: Center(
               child: Text(
                 "SIGN UP",
-                style: TextStyle(
+                style: GoogleFonts.nunito(
                   color: Colors.deepPurple,
                   fontSize: 20,
                 )

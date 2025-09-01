@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:halo_stories/auth/auth_service.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({super.key});
@@ -51,9 +52,9 @@ class _RegisterPageState extends State<RegisterPage> {
       backgroundColor: const Color.fromARGB(255, 54, 197, 192),
       appBar: AppBar(
         backgroundColor: const Color.fromARGB(255, 54, 197, 192),
-        title: const Text(
+        title: Text(
           'SIGN UP',
-          style: TextStyle(
+          style: GoogleFonts.nunito(
             fontSize: 50,
             fontWeight: FontWeight.bold,
             color: Colors.deepPurple,
@@ -99,9 +100,9 @@ class _RegisterPageState extends State<RegisterPage> {
               backgroundColor: Colors.deepPurple,
               foregroundColor: Colors.white,
             ),
-            child: const Text(
+            child: Text(
               'SIGN UP',
-              style: TextStyle(
+              style: GoogleFonts.nunito(
                 fontSize: 30,
                 fontWeight: FontWeight.bold,
               )

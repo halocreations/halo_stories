@@ -22,7 +22,7 @@ class AuthGate extends StatelessWidget {
 
         // change back to HomeScreen once done with changing UI of login screen
         if(session != null) {
-          return LoginPage();
+          return HomeScreen();
         }
         else {
           return LoginPage();
