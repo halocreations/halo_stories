@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:halo_stories/screens/profile.dart';
+import 'package:halo_stories/screens/quizzes.dart';
 import 'package:halo_stories/screens/st_joseph_story.dart';
 
 
@@ -15,7 +17,19 @@ class _StoriesOfTheSaintsScreenState extends State<StoriesOfTheSaintsScreen> {
   static const EdgeInsets cardMargin = EdgeInsets.all(
     24.0);
   static const EdgeInsets cardPadding = EdgeInsets.all(20.0);
+  int _selectedIndex = 0;
 
+
+  final List<Widget> screens = const [
+    StoriesOfTheSaintsScreen(),
+    QuizzesScreen(),
+    ProfileScreen(),
+  ];
+  void onScreenTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
