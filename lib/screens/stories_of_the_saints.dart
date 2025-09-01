@@ -286,7 +286,22 @@ class _StoriesOfTheSaintsScreenState extends State<StoriesOfTheSaintsScreen> {
       bottomNavigationBar: BottomNavigationBar(
         showSelectedLabels: true,
         showUnselectedLabels: false,
-        items: [],
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.book),
+            label: 'Stories'
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.assignment),
+            label: 'Quizzes'
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person),
+            label: 'Profile'
+          )
+        ],
+        currentIndex: _selectedIndex,
+        onTap: onScreenTapped,
       ),
     );
   }
