@@ -1,12 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:halo_stories/screens/st_joseph_story.dart';
 
-class StoriesOfTheSaintsScreen extends StatelessWidget {
+
+
+class StoriesOfTheSaintsScreen extends StatefulWidget {
   const StoriesOfTheSaintsScreen({super.key});
 
+  @override
+  State<StoriesOfTheSaintsScreen> createState() => _StoriesOfTheSaintsScreenState();
+}
+
+class _StoriesOfTheSaintsScreenState extends State<StoriesOfTheSaintsScreen> {
+  // Bigger margin
   static const EdgeInsets cardMargin = EdgeInsets.all(
-    24.0,
-  ); // Bigger margin
+    24.0);
   static const EdgeInsets cardPadding = EdgeInsets.all(20.0);
 
   @override
@@ -261,7 +268,12 @@ class StoriesOfTheSaintsScreen extends StatelessWidget {
             )
           ]
         ),
-      )
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        showSelectedLabels: true,
+        showUnselectedLabels: false,
+        items: [],
+      ),
     );
   }
 }
