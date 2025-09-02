@@ -34,30 +34,26 @@ class _StoriesOfTheSaintsScreenState extends State<StoriesOfTheSaintsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 54, 197, 192),
-      appBar: AppBar(
-        title: Container(
-          padding: const EdgeInsets.symmetric(horizontal: 12.0, vertical: 8.0),
-          decoration: BoxDecoration(
-            color: const Color.fromARGB(255, 243, 212, 246),
-            borderRadius: BorderRadius.circular(20),
-          ),
-          child: Text(
-            'STORIES OF THE SAINTS',
-            style: TextStyle(
-              fontSize: 27,
-              fontWeight: FontWeight.bold,
-              color: const Color.fromARGB(255, 72, 4, 72),
-            ),
-          ),
-          
-        ),
-          
-        backgroundColor: const Color.fromARGB(255, 54, 197, 192),
-      ),
       body: SafeArea(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 12.0, vertical: 8.0),
+              decoration: BoxDecoration(
+                color: const Color.fromARGB(255, 243, 212, 246),
+                borderRadius: BorderRadius.circular(20),
+              ),
+              child: Text(
+                'STORIES OF THE SAINTS',
+                style: TextStyle(
+                  fontSize: 27,
+                  fontWeight: FontWeight.bold,
+                  color: const Color.fromARGB(255, 72, 4, 72),
+                ),
+              ),
+              
+            ),
             Card(
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(20),
