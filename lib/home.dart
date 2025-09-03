@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:halo_stories/screens/badges.dart';
 import 'package:halo_stories/screens/profile.dart';
 import 'package:halo_stories/screens/quizzes.dart';
+import 'package:halo_stories/screens/st_cecilia_story.dart';
 import 'package:halo_stories/screens/stories_of_the_saints.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -50,15 +51,26 @@ class HomeScreen extends StatelessWidget {
                           ),
                           
                         ),
-                        child: Center(
-                          child: Text(
-                            'SAINT OF THE DAY',
-                            style: TextStyle(
-                              fontSize: 30,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white,
+                        child: InkWell(
+                          borderRadius: BorderRadius.circular(20),
+                          child: Center(
+                            child: Text(
+                              'SAINT OF THE DAY',
+                              style: TextStyle(
+                                fontSize: 30,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                              ),
                             ),
                           ),
+                          onTap: () => {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder:(context) => StCeciliaStory(),
+                              )
+                            ),
+                          }
                           
                         ),
                       ),
