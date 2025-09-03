@@ -37,22 +37,22 @@ class HomeScreen extends StatelessWidget {
                 elevation: 2,
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(20.0),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      //Orange header
-                      Container(
-                        width: double.infinity,
-                        padding: EdgeInsets.symmetric(vertical: 16),
-                        decoration: BoxDecoration(
-                          color: const Color.fromARGB(255, 237, 162, 34),
-                          borderRadius: BorderRadius.vertical(
-                            top: Radius.circular(20),
+                  child: InkWell(
+                    borderRadius: BorderRadius.circular(20),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        //Orange header
+                        Container(
+                          width: double.infinity,
+                          padding: EdgeInsets.symmetric(vertical: 16),
+                          decoration: BoxDecoration(
+                            color: const Color.fromARGB(255, 237, 162, 34),
+                            borderRadius: BorderRadius.vertical(
+                              top: Radius.circular(20),
+                            ),
+                            
                           ),
-                          
-                        ),
-                        child: InkWell(
-                          borderRadius: BorderRadius.circular(20),
                           child: Center(
                             child: Text(
                               'SAINT OF THE DAY',
@@ -62,60 +62,60 @@ class HomeScreen extends StatelessWidget {
                                 color: Colors.white,
                               ),
                             ),
+                            
                           ),
-                          onTap: () => {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder:(context) => StCeciliaStory(),
-                              )
-                            ),
-                          }
-                          
                         ),
-                      ),
-                      //White body
-                      Container(
-                        height: 200,
-                        padding: cardPadding,
-                        color: const Color.fromARGB(255, 246, 247, 214),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            ClipRRect(
-                              borderRadius: BorderRadius.only(
-                                bottomLeft: Radius.circular(20),
-                              ),
-                              child: Container(
-                                width: 110,
-                                color: const Color.fromARGB(255, 246, 247, 214),
-                                child: Image.asset(
-                                  'assets/St_Cecilia_First_Draft.png',
-                                  fit: BoxFit.cover
+                        //White body
+                        Container(
+                          height: 200,
+                          padding: cardPadding,
+                          color: const Color.fromARGB(255, 246, 247, 214),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              ClipRRect(
+                                borderRadius: BorderRadius.only(
+                                  bottomLeft: Radius.circular(20),
                                 ),
-                              )
-                            ),
-                            Expanded(
-                              child: Padding(
-                                padding: cardPadding,
-                                child: Align(
-                                  alignment: Alignment.centerLeft,
-                                  child: Text(
-                                    'Saint\nCecilia',
-                                    style: TextStyle(
-                                      fontSize: 40,
-                                      fontWeight: FontWeight.w600,
-                                      color: Colors.black87,
+                                child: Container(
+                                  width: 110,
+                                  color: const Color.fromARGB(255, 246, 247, 214),
+                                  child: Image.asset(
+                                    'assets/St_Cecilia_First_Draft.png',
+                                    fit: BoxFit.cover
+                                  ),
+                                )
+                              ),
+                              Expanded(
+                                child: Padding(
+                                  padding: cardPadding,
+                                  child: Align(
+                                    alignment: Alignment.centerLeft,
+                                    child: Text(
+                                      'Saint\nCecilia',
+                                      style: TextStyle(
+                                        fontSize: 40,
+                                        fontWeight: FontWeight.w600,
+                                        color: Colors.black87,
+                                      )
                                     )
                                   )
                                 )
-                              )
-                            ),
-                          ],
+                              ),
+                            ],
+                          ),
                         ),
+                      ],
+                    ),
+                    onTap: () => {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => StCeciliaStory()
+                        )
                       ),
-                    ],
-                  ),
+                    }
+                  )
                 ), 
               ),
               Padding(
