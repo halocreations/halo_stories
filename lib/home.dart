@@ -9,8 +9,8 @@ import 'package:google_fonts/google_fonts.dart';
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
-  static const EdgeInsets cardMargin = const EdgeInsets.all(24.0); // Bigger margin
-  static const EdgeInsets cardPadding = const EdgeInsets.all(20.0);
+  static const EdgeInsets cardMargin = EdgeInsets.all(24.0); // Bigger margin
+  static const EdgeInsets cardPadding = EdgeInsets.all(20.0);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -338,7 +338,6 @@ class HomeScreen extends StatelessWidget {
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Expanded(
-                                  
                                   child: Padding(
                                     padding: EdgeInsets.symmetric(horizontal: 4.0),
                                     child: Text(
