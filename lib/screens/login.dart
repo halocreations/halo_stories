@@ -3,6 +3,7 @@ import 'package:halo_stories/auth/auth_service.dart';
 import 'package:halo_stories/home.dart';
 import 'package:halo_stories/screens/register.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -23,11 +24,14 @@ class _LoginPageState extends State<LoginPage> {
 
   void login() async {
     //prepare data
-    final email = _emailController.text;
+    final email = _emailController.text.trim();
     final password = _passwordController.text;
 
     try {
-      await authService.signInWithEmailPassword(email, password);
+      await authService.signInWithEmailPassword(
+        email, 
+        password,
+      );
     } catch(e) {
       if(mounted) {
         ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Error: $e')));
@@ -66,73 +70,83 @@ class _LoginPageState extends State<LoginPage> {
           ),
 
           SizedBox(height: 35),
-          TextField(
-            controller: _emailController,
-            decoration: InputDecoration(
-              filled: true,
-              fillColor: const Color.fromARGB(255, 235, 229, 209),
-              border: OutlineInputBorder(borderRadius: BorderRadius.circular(20)),
-              hintText: 'Email'
-            ),
-            
-          ),
-          Padding(padding: EdgeInsets.symmetric(horizontal: 30, vertical: 5),),
-          TextField(
-            obscureText: _obscureText,
-            autocorrect: false,
-            controller: _passwordController,
-            decoration: InputDecoration(
-              suffixIcon: GestureDetector(
-                child: Icon(
-                  _obscureText ? Icons.visibility_off : Icons.visibility,
+          Column(
+            children: [
+              TextField(
+                controller: _emailController,
+                decoration: InputDecoration(
+                  filled: true,
+                  fillColor: const Color.fromARGB(255, 235, 229, 209),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  hintText: 'Email',
                 ),
-                onTap: () {
-                  setState(() {
-                    _obscureText = !_obscureText;
-                  });
-                },
               ),
-              filled: true,
-              fillColor: const Color.fromARGB(255, 235, 229, 209),
-              border: OutlineInputBorder(borderRadius: BorderRadius.circular(20)),
-              hintText: 'Password',
-            )
-          ),
-          const SizedBox(height: 12),
-          ElevatedButton(
-            style: ElevatedButton.styleFrom(
-              backgroundColor: Colors.deepPurple,
-              foregroundColor: Colors.white,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(15),
-              )
-            ),
-            onPressed: login, 
-            child: Text(
-              'LOGIN',
-              style: GoogleFonts.nunito(
-                fontSize: 30,
-                fontWeight: FontWeight.bold,
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 30, vertical: 5),
               ),
-            ),
+              TextField(
+                obscureText: _obscureText,
+                autocorrect: false,
+                controller: _passwordController,
+                decoration: InputDecoration(
+                  suffixIcon: GestureDetector(
+                    child: Icon(
+                      _obscureText ? Icons.visibility_off : Icons.visibility,
+                    ),
+                    onTap: () {
+                      setState(() {
+                        _obscureText = !_obscureText;
+                      });
+                    },
+                  ),
+                  filled: true,
+                  fillColor: const Color.fromARGB(255, 235, 229, 209),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  hintText: 'Password',
+                ),
+              ),
+              const SizedBox(height: 12),
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.deepPurple,
+                  foregroundColor: Colors.white,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(15),
+                  ),
+                ),
+                onPressed: login,
+                child: Text(
+                  'LOGIN',
+                  style: GoogleFonts.nunito(
+                    fontSize: 30,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+              SizedBox(height: 20),
+              GestureDetector(
+                onTap: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const RegisterPage()),
+                ),
+                child: Center(
+                  child: Text(
+                    "SIGN UP",
+                    style: GoogleFonts.nunito(
+                      color: Colors.deepPurple,
+                      fontSize: 20,
+                    ),
+                  ),
+                ),
+              ),
+            ]
           ),
-          SizedBox(height: 20),
-          GestureDetector(
-            onTap: () => Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const RegisterPage()),
-            ),
-            child: Center(
-              child: Text(
-                "SIGN UP",
-                style: GoogleFonts.nunito(
-                  color: Colors.deepPurple,
-                  fontSize: 20,
-                )
-
-              )
-            )
-          ),
+          
+          
 
         ]
       )
