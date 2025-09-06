@@ -5,6 +5,7 @@ import 'package:halo_stories/screens/register.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
+
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
 
@@ -70,84 +71,94 @@ class _LoginPageState extends State<LoginPage> {
           ),
 
           SizedBox(height: 35),
-          Column(
-            children: [
-              TextField(
-                controller: _emailController,
-                decoration: InputDecoration(
-                  filled: true,
-                  fillColor: const Color.fromARGB(255, 235, 229, 209),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                  hintText: 'Email',
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 30, vertical: 5),
-              ),
-              TextField(
-                obscureText: _obscureText,
-                autocorrect: false,
-                controller: _passwordController,
-                decoration: InputDecoration(
-                  suffixIcon: GestureDetector(
-                    child: Icon(
-                      _obscureText ? Icons.visibility_off : Icons.visibility,
+          Container(
+            width: 250,
+            height: 290,
+            padding: EdgeInsets.symmetric(horizontal: 10, vertical:20),
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(20),
+            ),
+            child: Column(
+              children: [
+                TextField(
+                  controller: _emailController,
+                  decoration: InputDecoration(
+                    filled: true,
+                    fillColor: const Color.fromARGB(255, 235, 229, 209),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(20),
                     ),
-                    onTap: () {
-                      setState(() {
-                        _obscureText = !_obscureText;
-                      });
-                    },
-                  ),
-                  filled: true,
-                  fillColor: const Color.fromARGB(255, 235, 229, 209),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                  hintText: 'Password',
-                ),
-              ),
-              const SizedBox(height: 12),
-              ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.deepPurple,
-                  foregroundColor: Colors.white,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(15),
+                    hintText: 'Email',
                   ),
                 ),
-                onPressed: login,
-                child: Text(
-                  'LOGIN',
-                  style: GoogleFonts.nunito(
-                    fontSize: 30,
-                    fontWeight: FontWeight.bold,
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 30, vertical: 5),
+                ),
+                TextField(
+                  obscureText: _obscureText,
+                  autocorrect: false,
+                  controller: _passwordController,
+                  decoration: InputDecoration(
+                    suffixIcon: GestureDetector(
+                      child: Icon(
+                        _obscureText ? Icons.visibility_off : Icons.visibility,
+                      ),
+                      onTap: () {
+                        setState(() {
+                          _obscureText = !_obscureText;
+                        });
+                      },
+                    ),
+                    filled: true,
+                    fillColor: const Color.fromARGB(255, 235, 229, 209),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    hintText: 'Password',
                   ),
                 ),
-              ),
-              SizedBox(height: 20),
-              GestureDetector(
-                onTap: () => Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const RegisterPage()),
-                ),
-                child: Center(
+                const SizedBox(height: 12),
+                ElevatedButton(
+                  
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.deepPurple,
+                    foregroundColor: Colors.white,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(15),
+                    ),
+                    minimumSize: Size(double.infinity, 50),
+                  ),
+                  onPressed: login,
                   child: Text(
-                    "SIGN UP",
+                    'LOGIN',
                     style: GoogleFonts.nunito(
-                      color: Colors.deepPurple,
-                      fontSize: 20,
+                      fontSize: 30,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
                 ),
-              ),
-            ]
+                SizedBox(height: 20),
+                GestureDetector(
+                  onTap: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const RegisterPage(),
+                    ),
+                  ),
+                  child: Center(
+                    child: Text(
+                      "SIGN UP",
+                      style: GoogleFonts.nunito(
+                        color: Colors.deepPurple,
+                        fontSize: 20,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ),
-          
-          
-
         ]
       )
     );
