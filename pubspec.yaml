@@ -80,6 +80,7 @@ flutter:
     - assets/St_Cecilia_First_Draft.png
     - assets/logo.png
     - assets/logo_revised.png
+    - assets/.env
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

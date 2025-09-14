@@ -23,6 +23,8 @@ PODS:
   - FirebaseCoreInternal (12.2.0):
     - "GoogleUtilities/NSData+zlib (~> 8.1)"
   - Flutter (1.0.0)
+  - flutter_config (0.0.1):
+    - Flutter
   - google_sign_in_ios (0.0.1):
     - Flutter
     - FlutterMacOS
@@ -66,6 +68,7 @@ DEPENDENCIES:
   - app_links (from `.symlinks/plugins/app_links/ios`)
   - firebase_core (from `.symlinks/plugins/firebase_core/ios`)
   - Flutter (from `Flutter`)
+  - flutter_config (from `.symlinks/plugins/flutter_config/ios`)
   - google_sign_in_ios (from `.symlinks/plugins/google_sign_in_ios/darwin`)
   - path_provider_foundation (from `.symlinks/plugins/path_provider_foundation/darwin`)
   - shared_preferences_foundation (from `.symlinks/plugins/shared_preferences_foundation/darwin`)
@@ -91,6 +94,8 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/firebase_core/ios"
   Flutter:
     :path: Flutter
+  flutter_config:
+    :path: ".symlinks/plugins/flutter_config/ios"
   google_sign_in_ios:
     :path: ".symlinks/plugins/google_sign_in_ios/darwin"
   path_provider_foundation:
@@ -109,6 +114,7 @@ SPEC CHECKSUMS:
   FirebaseCore: 311c48a147ad4a0ab7febbaed89e8025c67510cd
   FirebaseCoreInternal: 56ea29f3dad2894f81b060f706f9d53509b6ed3b
   Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
+  flutter_config: a0cd4b5996f2a1683657d14777c8fa57e04a40ea
   google_sign_in_ios: 205742c688aea0e64db9da03c33121694a365109
   GoogleSignIn: c7f09cfbc85a1abf69187be091997c317cc33b77
   GoogleUtilities: 00c88b9a86066ef77f0da2fab05f65d7768ed8e1
