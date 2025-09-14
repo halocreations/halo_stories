@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1081617952480",
+    "project_id": "halostories-84ff4",
+    "storage_bucket": "halostories-84ff4.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1081617952480:android:5efa82057e6e96eaf86a85",
+        "android_client_info": {
+          "package_name": "com.example.halo_stories"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBSYTuzI3_datyxhB26vtaLCuv-aijjlT0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

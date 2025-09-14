@@ -4,7 +4,7 @@ import 'package:halo_stories/home.dart';
 import 'package:halo_stories/screens/register.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
-
+import 'package:google_sign_in/google_sign_in.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -14,6 +14,8 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+
+
 
   //get auth service 
   final authService = AuthService();
@@ -37,6 +39,14 @@ class _LoginPageState extends State<LoginPage> {
       if(mounted) {
         ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Error: $e')));
       }
+    }
+  }
+
+  Future<User?> signInWithGoogle() async {
+    try {
+
+    } catch (e) {
+
     }
   }
   //login button pressed
